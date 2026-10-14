@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Effects Demo</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #eef2ff;
+        color: #1e293b;
+      }
+
+      header {
+        background: #172554;
+        color: white;
+        text-align: center;
+        padding: 30px 15px;
+      }
+
+      header p {
+        color: #c7d2fe;
+      }
+
+      /* FLEXBOX LAYOUT */
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 40px 20px;
+      }
+
+      /* 1. BOX-SHADOW, BORDER-RADIUS, TRANSITION */
+      .card {
+        background: white;
+        width: 280px;
+        padding: 25px;
+        text-align: center;
+
+        border-radius: 20px;
+        box-shadow: 0 5px 15px #0002;
+
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+
+      /* 2. HOVER EFFECT */
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px #0003;
+      }
+
+      /* 3. BORDER-RADIUS: CIRCLE */
+      .avatar {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        border-radius: 50%;
+
+        background: linear-gradient(135deg, #6366f1, #06b6d4);
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 4. OPACITY */
+      .faded {
+        opacity: 0.35;
+      }
+
+      /* 5. BUTTON TRANSITION */
+      button {
+        background: royalblue;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 20px;
+        cursor: pointer;
+
+        transition:
+          background 0.4s ease,
+          transform 0.3s ease;
+      }
+
+      button:hover {
+        background: darkblue;
+        transform: scale(1.08);
+      }
+
+      /* 6. KEYFRAMES ANIMATION */
+      .spinner {
+        width: 45px;
+        height: 45px;
+        margin: 20px auto;
+
+        border: 5px solid #cbd5e1;
+        border-top-color: royalblue;
+        border-radius: 50%;
+
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* 7. ANIMATED PULSE */
+      .pulse {
+        display: inline-block;
+        padding: 12px 20px;
+        background: #dcfce7;
+        color: #166534;
+        border-radius: 10px;
+
+        animation: pulse 1.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes pulse {
+        from {
+          transform: scale(1);
+        }
+
+        to {
+          transform: scale(1.08);
+        }
+      }
+
+      section {
+        text-align: center;
+        padding: 10px 20px 35px;
+      }
+
+      footer {
+        background: #172554;
+        color: white;
+        text-align: center;
+        padding: 18px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>CSS Visual Effects</h1>
+      <p>Hover, observe and understand CSS!</p>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="card">
+          <div class="avatar">AR</div>
+          <h2>Asha Rao</h2>
+          <p>Web Developer</p>
+          <p>HTML · CSS · JavaScript</p>
+          <button>Hover Over Me</button>
+        </div>
+
+        <div class="card faded">
+          <div class="avatar">RK</div>
+          <h2>Rahul Kumar</h2>
+          <p>UI Designer</p>
+          <p>Opacity: 0.35</p>
+          <button>Faded Card</button>
+        </div>
+      </div>
+
+      <section>
+        <h2>CSS Animation</h2>
+        <p>The spinner rotates continuously using @keyframes.</p>
+        <div class="spinner"></div>
+
+        <h3>Pulse Animation</h3>
+        <div class="pulse">Look at me!</div>
+      </section>
+    </main>
+
+    <footer>CSS Properties Demonstration</footer>
+  </body>
+</html>

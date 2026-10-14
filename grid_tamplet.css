@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#grid {
+  display: grid;
+
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 80px 1fr 60px;
+
+  min-height: 100vh;
+
+  grid-template-areas:
+    "header header"
+    "sidebar main1"
+    "footer footer";
+}
+
+.header {
+  grid-area: header;
+  background-color: lightblue;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: lightgreen;
+}
+
+.main1 {
+  grid-area: main1;
+  background-color: lightyellow;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: lightcoral;
+}
